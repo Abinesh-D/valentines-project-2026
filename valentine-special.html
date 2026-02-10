@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Forever Us ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="icon" href="data:,">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Baloo+2:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Baloo+2:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: Poppins;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body.night {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+    }
+
+    h1,
+    h2 {
+      font-family: 'Great Vibes', cursive
+    }
+
+
+    .correct-msg {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #ff4d6d;
+      text-align: center;
+      opacity: 0;
+    }
+
+    .san-font {
+      display: block;
+      margin-top: 0.6rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      color: #111;
+    }
+
+
+
+    .correct-msg.show {
+      opacity: 1;
+      animation: lovePulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes lovePulse {
+      0% {
+        transform: scale(1);
+        text-shadow: 0 0 5px rgba(255, 77, 109, 0.3);
+      }
+
+      50% {
+        transform: scale(1.08);
+        text-shadow: 0 0 20px rgba(255, 77, 109, 0.8);
+      }
+
+      100% {
+        transform: scale(1);
+        text-shadow: 0 0 5px rgba(255, 77, 109, 0.3);
+      }
+    }
+
+
+
+    .card-love {
+      background: white;
+      border-radius: 25px;
+      padding: 25px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+    }
+
+    .option-btn {
+      border-radius: 30px;
+      margin: .4rem 0
+    }
+
+    .option-btn.disabled {
+      pointer-events: none;
+      opacity: .6
+    }
+
+    .fireworks,
+    canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 3000
+    }
+
+
+
+    .memory-img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      /* ✅ keeps full image visible */
+      border-radius: 16px;
+      animation: memoryZoom 1.4s ease forwards;
+      opacity: 0;
+    }
+
+
+    @keyframes memoryZoom {
+      0% {
+        opacity: 0;
+        transform: scale(0.85) rotate(-2deg);
+      }
+
+      60% {
+        opacity: 1;
+        transform: scale(1.03) rotate(1deg);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+
+
+
+    .love-modal {
+      border-radius: 20px;
+      animation: scaleIn 0.6s ease;
+      background: linear-gradient(135deg, #fff0f3, #ffffff);
+    }
+
+    @keyframes scaleIn {
+      0% {
+        transform: scale(0.7);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .love-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+    }
+
+    .love-text {
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      color: #dc3545;
+      font-weight: 600;
+    }
+
+
+
+
+
+    .card-love {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-10px)
+      }
+    }
+
+    .btn {
+      transition: .3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 25px rgba(255, 0, 80, .3);
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: url("https://www.transparenttextures.com/patterns/hearts.png");
+      opacity: .05;
+      pointer-events: none;
+    }
+
+
+    /* emoji rain */
+    .emoji {
+      position: fixed;
+      top: -10px;
+      font-size: 2rem;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0
+      }
+    }
+
+    /* typing */
+    .typing {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid pink;
+      animation: typing 3s steps(40, end), blink .7s infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0
+      }
+
+      to {
+        width: 100%
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent
+      }
+    }
+
+    .song-typing {
+      font-size: 1.1rem;
+      color: #ff4d6d;
+      font-weight: 500;
+      white-space: pre-line;
+      display: inline-block;
+      border-right: 2px solid #ff4d6d;
+      padding-right: 6px;
+      animation: blink 0.7s infinite;
+      max-width: 90%;
+    }
+
+
+    .lyrics-box {
+      max-width: 600px;
+      margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #ff4d6d;
+    }
+
+    .lyric-line {
+      opacity: 0.4;
+      transition: all 0.4s ease;
+    }
+
+    .lyric-line.active {
+      opacity: 1;
+      color: #ff1744;
+      font-weight: 600;
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+
+
+    .valentine-gallery {
+      background: linear-gradient(135deg, #fff0f5, #ffe6ee);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .valentine-gallery h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
+      color: #d6336c;
+      margin-bottom: 10px;
+    }
+
+    .valentine-gallery p {
+      font-family: 'Baloo 2', cursive;
+      color: #a61e4d;
+      margin-bottom: 30px;
+    }
+
+    /* Gallery Frame */
+    .gallery-frame {
+      position: relative;
+      max-width: 280px;
+      margin: auto;
+      border-radius: 26px;
+      padding: 8px;
+      background: linear-gradient(135deg, #ff758f, #ffd6e0);
+      box-shadow: 0 20px 40px rgba(255, 105, 135, 0.35);
+    }
+
+    .gallery-frame img {
+      width: 100%;
+      border-radius: 22px;
+      animation: fadeScale 0.6s ease;
+    }
+
+    @keyframes fadeScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Peek hint */
+    .peek-text {
+      font-size: 14px;
+      margin-top: 10px;
+      color: #c9184a;
+      font-family: 'Baloo 2', cursive;
+      animation: blink 1.6s infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.4;
+      }
+    }
+
+    /* Dots */
+    .dots {
+      margin-top: 15px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #ffc2d1;
+      border-radius: 50%;
+      margin: 0 5px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background: #d6336c;
+      transform: scale(1.4);
+    }
+
+    /* Controls */
+    .gallery-controls {
+      margin-top: 18px;
+    }
+
+    .gallery-btn {
+      border: none;
+      background: #ff4d6d;
+      color: #fff;
+      border-radius: 50px;
+      padding: 8px 16px;
+      margin: 0 6px;
+      font-family: 'Baloo 2', cursive;
+    }
+
+
+    .latchanam-section {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #fff0f5, #fde2e4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .latchanam-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 30px;
+      padding: 40px 25px;
+      max-width: 360px;
+      width: 100%;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+      animation: cardFloat 1s ease;
+    }
+
+    @keyframes cardFloat {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .latchanam-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2.5rem, 7vw, 3.4rem);
+      color: #d6336c;
+      margin-bottom: 10px;
+    }
+
+    .latchanam-question {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.1rem;
+      color: #a61e4d;
+      margin-bottom: 30px;
+    }
+
+    .go-btn {
+      background: linear-gradient(135deg, #ff4d6d, #ff758f);
+      color: #fff;
+      border: none;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-family: 'Baloo 2', cursive;
+      box-shadow: 0 12px 30px rgba(255, 77, 109, 0.45);
+      animation: pulse 1.6s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.08);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Gallery */
+    .latchanam-gallery {
+      display: none;
+      margin-top: 30px;
+    }
+
+    .gallery-img {
+      width: 100%;
+      max-width: 260px;
+      border-radius: 22px;
+      margin: auto;
+      box-shadow: 0 18px 40px rgba(255, 105, 135, 0.35);
+      animation: fadeZoom 0.8s ease;
+    }
+
+    @keyframes fadeZoom {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .gallery-dots {
+      margin-top: 16px;
+    }
+
+    .gallery-dot {
+      width: 10px;
+      height: 10px;
+      background: #ffc2d1;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 4px;
+    }
+
+    .gallery-dot.active {
+      background: #d6336c;
+      transform: scale(1.4);
+    }
+
+
+    .amarkkalam-section {
+      background: linear-gradient(135deg, #fff0f5, #fde2e4);
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .amarkkalam-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      color: #c9184a;
+      margin-bottom: 10px;
+    }
+
+    .amarkkalam-sub {
+      font-family: 'Baloo 2', cursive;
+      color: #a61e4d;
+      margin-bottom: 35px;
+    }
+
+    .recreate-btn {
+      background: linear-gradient(135deg, #ff4d6d, #ff758f);
+      color: #fff;
+      border: none;
+      padding: 14px 38px;
+      border-radius: 50px;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.05rem;
+      box-shadow: 0 14px 30px rgba(255, 77, 109, 0.4);
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.07);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Comparison Box */
+    .compare-box {
+      display: none;
+      margin-top: 40px;
+      animation: fadeUp 1s ease;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .compare-card {
+      background: #fff;
+      border-radius: 22px;
+      padding: 10px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+      position: relative;
+    }
+
+    .compare-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 22px;
+      padding: 2px;
+      background: linear-gradient(135deg, #ff758f, #ffd6e0);
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+
+    .compare-card img {
+      width: 100%;
+      border-radius: 18px;
+      animation: zoomFade 0.8s ease;
+    }
+
+    @keyframes zoomFade {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .label {
+      font-family: 'Baloo 2', cursive;
+      font-weight: 600;
+      margin-top: 8px;
+      color: #d6336c;
+    }
+
+    @media (max-width: 768px) {
+      .compare-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    .memory-section {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, #fff0f5, #ffe6ec);
+    }
+
+    .valentine-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+      color: #d6336c;
+    }
+
+    .memory-sub {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    .reveal-btn {
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 12px 26px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.08);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .kids-gallery {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .kids-gallery img {
+      width: 220px;
+      border-radius: 20px;
+      opacity: 0;
+      transform: scale(0.7);
+      animation: revealImg 1s forwards;
+    }
+
+    .kids-gallery img:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes revealImg {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+
+
+
+
+    .neelothi-section {
+      padding: 4rem 1rem;
+      background: #0b132b;
+      color: white;
+      text-align: center;
+    }
+
+    .letter-box {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .typing-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .neelothi-btn {
+      background: transparent;
+      border: 2px solid #fff;
+      color: white;
+      padding: 10px 24px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .neelothi-btn:hover {
+      background: white;
+      color: #0b132b;
+    }
+
+    .neelothi-images {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .neelothi-images img {
+      width: 240px;
+      border-radius: 18px;
+      opacity: 0;
+    }
+
+    .left-img {
+      transform: translateX(-120px);
+      animation: slideLeft 1s forwards;
+    }
+
+    .right-img {
+      transform: translateX(120px);
+      animation: slideRight 1s forwards;
+    }
+
+    @keyframes slideLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="fireworksCanvas" style="
+    position:fixed;
+    inset:0;
+    z-index:5000;
+    pointer-events:none;
+    display:none;
+  ">
+  </canvas>
+
+
+  <div class="container py-5">
+    <section class="neelothi-section">
+      <div class="letter-box">
+        <p class="typing-text">
+          Heyy my dear Neelothi…
+          naan un nenapula laanguren laanguren…
+          so nee indha poc ah paarunguren 💙
+        </p>
+
+      </div>
+
+      <div class="neelothi-images hidden" id="neelothiImgs">
+        <img src="./assets//images/neelothioriginal.jpeg" class="left-img">
+        <img src="./assets//images/neelothi.png" class="right-img">
+      </div>
+    </section>
+
+
+
+
+    <h1 class="text-center text-danger mb-4 mt-5">Our Forever Quiz ❤️</h1>
+
+    <!-- QUESTION -->
+    <div class="card-love mb-4">
+      <h5>🎵 Our love song?</h5>
+      <button class="btn btn-outline-danger option-btn"
+        onclick="correctSong(this,'assets/audios/perfect.mp3')">Perfect</button>
+      <button class="btn btn-outline-danger option-btn" onclick="wrongSong(this,'friends.mp3')">Friends</button>
+      <button class="btn btn-outline-danger option-btn" onclick="wrongSong(this,'until-i-found-you.mp3')">Until I Found
+        You</button>
+      <button class="btn btn-outline-danger option-btn" onclick="wrongSong(this,'thousand-years.mp3')">Thousand
+        Years</button>
+
+      <div id="correctMsg" class="correct-msg d-none">
+        💖 Correct ah sonnenga Kadhali 💖
+        <span class="san-font">🖤 Moga Thoga Jukku Oppairas 🤍</span>
+      </div>
+
+
+    </div>
+
+    <!-- SONG NOTE (INSTAGRAM STYLE) -->
+    <div id="songNote" class="text-center mt-4 d-none">
+      <div id="lyricsBox" class="lyrics-box mb-4"></div>
+    </div>
+
+
+
+
+    <!-- PROPOSAL -->
+    <div id="valentineQuestion" class="card-love text-center mb-4">
+      <h2 class="text-dark">Will you be my Valentine? 💍</h2>
+      <button class="btn btn-success rounded-pill px-4 me-2" onclick="yesClicked()">YES 💖</button>
+      <button class="btn btn-outline-danger rounded-pill px-4" id="noBtn">
+        NO 😜
+      </button>
+    </div>
+
+
+    <!-- NO CLICK MODAL -->
+    <div class="modal fade" id="noModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4">
+          <div class="modal-body text-center p-4">
+            <h4 class="text-danger mb-3">Ohh 😌</h4>
+            <p class="mb-2">
+              I’m not your Valentine… it’s okay 💕
+            </p>
+            <p class="fw-semibold">
+              Then I’ll be your <span class="ambulo-font">Ambulo</span> 🤍
+            </p>
+            <p class="text-muted mt-3">
+              Thank you dear Bayil 🌸
+            </p>
+
+            <button class="btn btn-outline-danger mt-3" data-bs-dismiss="modal">
+              Close 💖
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- SLIDESHOW -->
+    <div class="modal fade" id="slideshowModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content p-3 text-center position-relative rounded-4">
+
+          <!-- CLOSE -->
+          <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
+
+          <h3 class="text-danger mb-3">You & Me like Whittee & Blackkee 📸</h3>
+
+          <img id="slideImg" src="./assets/images/whiteblack.png" class="img-fluid memory-img">
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="modal fade" id="surpriseModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-4 text-center rounded-4 position-relative">
+
+          <!-- CLOSE -->
+          <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
+
+          <h2 class="typing text-danger">My Love Letter 💌</h2>
+
+          <p class="mt-3 fs-5">
+            ❤️ Nee vandha naal la irundhu<br>
+            En life full ah complete ah poguthu<br>
+            Forever nee dhan Mah 🥹
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <section class="valentine-gallery">
+      <h2>Little Suprises through pic 💘</h2>
+      <p>Tap gently… I can see some pics here 👀</p>
+
+      <div class="gallery-frame">
+        <img id="galleryImg" src="./assets/images/gallery1.jpg" alt="memory">
+      </div>
+
+      <div class="peek-text">Swipe / Click dots to see more 💞</div>
+
+      <div class="dots" id="dots"></div>
+
+      <div class="gallery-controls">
+        <button class="gallery-btn" onclick="prevImg()">←</button>
+        <button class="gallery-btn" onclick="nextImg()">→</button>
+      </div>
+    </section>
+
+
+
+    <section class="latchanam-section">
+      <div class="latchanam-card">
+
+        <h1 class="latchanam-title">Latchanam ✨</h1>
+        <p class="latchanam-question">
+          Do you know the meaning of Latchanam?
+        </p>
+
+        <button class="go-btn" onclick="startLatchanam()">GO 💖</button>
+
+        <!-- Gallery -->
+        <div class="latchanam-gallery" id="latchanamGallery">
+          <img id="latchanamImg" class="gallery-img" src="./assets/images/latch1.jpg">
+          <div class="gallery-dots" id="latchDots"></div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="memory-section">
+      <h2 class="valentine-title">Little Her, Big Memories 💖</h2>
+      <p class="memory-sub">
+        I’ve been keeping something precious… want to see? 🧸
+      </p>
+
+      <button class="reveal-btn" onclick="revealKids()">Unlock 💝</button>
+
+      <div class="kids-gallery hidden" id="kidsGallery">
+        <img src="./assets//images/heraadharcardpic.jpg" alt="Childhood pic 1">
+        <img src="./assets//images/babypic.jpg" alt="Childhood pic 2">
+      </div>
+    </section>
+
+
+
+    <section class="amarkkalam-section">
+      <h2 class="amarkkalam-title">Final Surprise Baby 💕</h2>
+      <p class="amarkkalam-sub">
+        Movie scene 🎬 recreation… can you spot the difference? First guess😁✨
+      </p>
+
+      <button class="recreate-btn" onclick="showRecreation()">
+        Show Recreation 💖
+      </button>
+
+      <!-- Comparison -->
+      <div class="compare-box" id="compareBox">
+        <div class="compare-grid">
+          <!-- Original -->
+          <div class="compare-card">
+            <img src="./assets//images/amarkkalam.jpeg" alt="Original Scene">
+            <div class="label">Original Scene 🎥</div>
+          </div>
+
+          <!-- Your Recreation -->
+          <div class="compare-card">
+            <img src="./assets//images/amarkkalamwe.jpeg" alt="Recreated Scene">
+            <div class="label">Our Recreation 💑</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="amarkkalam-section">
+       <button class="btn btn-danger rounded-pill px-5 py-2 shadow" id="finalSurpriseBtn">
+      💖 My Feelings 💖
+    </button>
+    </section>
+
+
+   
+    <div class="modal fade" id="finalSurpriseModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content love-modal">
+
+          <div class="modal-body text-center p-5">
+            <h2 class="mb-4 text-danger love-title">💌 Final Tears,,,,,</h2>
+
+            <p class="love-text">
+              I hope you enjoyed every little part of my love.
+              Happy Valentine’s Day <span class="highlight">Chanthini</span> ❤️
+            </p>
+
+            <p class="love-text">
+              This is my <strong>first Valentine’s Day in my life and with you</strong>,
+              and I’m so excited and happy beyond words.
+              My heart feels full in a way it never has before.
+            </p>
+
+            <p class="love-text">
+              Being with you has taught me what love truly means —
+              calm, warm, safe, and beautiful.
+              You are not just my Valentine today,
+              you are my happiness every day.
+            </p>
+
+            <p class="love-text">
+              Let’s wait for our <strong>next Valentine’s Day</strong>,
+              and all the many more to come —
+              hand in hand, heart to heart 💞
+            </p>
+
+            <p class="mt-4 fw-semibold">
+              With all my love,<br>
+              <span class="highlight">Abinesh</span>
+            </p>
+
+             <p class="mt-4 fw-semibold">
+              Waiting for the Day of 💐<br>
+              <span class="highlight">Chanthini🌹 Mai Abinesh</span>
+            </p>
+
+            <button class="btn btn-outline-danger mt-4 px-4" data-bs-dismiss="modal">
+              Close 💖
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <audio id="audio"></audio>
+
+    <script>
+
+      const audio = document.getElementById("audio");
+
+      const syncedLyrics = [
+        { time: 2.8, text: "❤️ Darling, just hold my hand🤝" },
+        { time: 6.5, text: "Be my girl, I'll be your man 🤍" },
+        { time: 10.5, text: "I see 👀 my future in your eyes 👁️" },
+        { time: 16.5, text: "🦋 Baby, I'm dancin' in the dark 🌑" },
+        { time: 24.0, text: "With you between my arms 🫂" },
+        { time: 28.0, text: "Barefoot on the grass 🌿" },
+        { time: 32.0, text: "🎵 Listenin' to our favourite song 🎶" },
+        { time: 35.8, text: "When I saw you in that dress 👗" },
+        { time: 40.5, text: "Looking so 🦋 beautiful 💫" },
+        { time: 43.0, text: "I don't deserve this 🥹" },
+        { time: 48.0, text: "🐼 Darling, you look perfect tonight 💍" },
+      ];
+
+
+      let typingInterval;
+      let isTyping = false;
+
+      function typeLine(element, text) {
+        clearInterval(typingInterval);
+        isTyping = true;
+
+        element.textContent = "";
+        let i = 0;
+
+        typingInterval = setInterval(() => {
+          element.textContent += text.charAt(i);
+          i++;
+          if (i >= text.length) {
+            clearInterval(typingInterval);
+            isTyping = false;
+          }
+        }, 90);
+      }
+
+
+
+
+      let currentLine = 0;
+
+      function syncLyrics() {
+        if (
+          currentLine < syncedLyrics.length &&
+          !isTyping &&
+          audio.currentTime >= syncedLyrics[currentLine].time
+        ) {
+          const box = document.getElementById("lyricsBox");
+
+          // deactivate previous
+          document
+            .querySelectorAll(".lyric-line")
+            .forEach(l => l.classList.remove("active"));
+
+          // create new line
+          const line = document.createElement("div");
+          line.className = "lyric-line active";
+          box.appendChild(line);
+
+          typeLine(line, syncedLyrics[currentLine].text);
+          currentLine++;
+        }
+
+        requestAnimationFrame(syncLyrics);
+      }
+
+
+      function correctSong(btn, songPath) {
+        const msg = document.getElementById("correctMsg");
+
+        if (!msg.classList.contains("show")) {
+          msg.classList.remove("d-none");
+          msg.classList.add("show");
+        }
+
+
+        audio.pause();
+        audio.currentTime = 0;
+
+        currentLine = 0;
+        clearInterval(typingInterval);
+        isTyping = false;
+
+        audio.src = songPath;
+        audio.play();
+
+        document.querySelectorAll(".option-btn")
+          .forEach(b => b.classList.add("disabled"));
+
+        btn.classList.replace("btn-outline-danger", "btn-success");
+
+        document.getElementById("songNote").classList.remove("d-none");
+        document.getElementById("lyricsBox").innerHTML = "";
+
+        requestAnimationFrame(syncLyrics);
+      }
+
+
+
+      /* YES CLICK */
+      function yesClicked() {
+        document.body.classList.add('night');
+        launchFireworks();
+        emojiRain();
+        vibrateLove();
+
+        // ✅ ONLY show memories modal
+        showSlideshow();
+      }
+
+
+
+      /* SLIDESHOW */
+
+      function showSlideshow() {
+        const modalEl = document.getElementById('slideshowModal');
+        const modal = new bootstrap.Modal(modalEl);
+
+        const img = document.getElementById('slideImg');
+        img.classList.remove('memory-img');
+        void img.offsetWidth; // reflow
+        img.classList.add('memory-img');
+
+        modal.show();
+      }
+
+      const memoriesModal = document.getElementById('slideshowModal');
+      const letterModalEl = document.getElementById('surpriseModal');
+
+      memoriesModal.addEventListener('hidden.bs.modal', () => {
+        const letterModal = new bootstrap.Modal(letterModalEl);
+        letterModal.show();
+      });
+
+
+      /* EMOJI */
+      function emojiRain() {
+        const e = ['❤️', '💍', '🔥', '🎉', '🥹'];
+        for (let i = 0; i < 40; i++) {
+          const s = document.createElement('span');
+          s.className = 'emoji';
+          s.innerText = e[Math.floor(Math.random() * e.length)];
+          s.style.left = Math.random() * 100 + 'vw';
+          s.style.animationDuration = 2 + Math.random() * 3 + 's';
+          document.body.appendChild(s);
+          setTimeout(() => s.remove(), 5000);
+        }
+      }
+
+
+      let fwCanvas, fwCtx, fwParticles = [], fwId = null;
+
+      function launchFireworks() {
+        fwCanvas = document.getElementById('fireworksCanvas');
+        fwCtx = fwCanvas.getContext('2d');
+        fwCanvas.width = innerWidth;
+        fwCanvas.height = innerHeight;
+        fwCanvas.style.display = 'block';
+
+        fwParticles = [];
+        for (let i = 0; i < 400; i++) {
+          fwParticles.push({
+            x: innerWidth / 2,
+            y: innerHeight / 2,
+            r: Math.random() * 3 + 2,
+            a: Math.random() * Math.PI * 2,
+            s: Math.random() * 7 + 2,
+            l: 120,
+            c: `hsl(${Math.random() * 360},100%,70%)`
+          });
+        }
+        animateFW();
+      }
+
+      function animateFW() {
+        fwCtx.clearRect(0, 0, fwCanvas.width, fwCanvas.height);
+        fwParticles.forEach(p => {
+          fwCtx.beginPath();
+          fwCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          fwCtx.fillStyle = p.c;
+          fwCtx.fill();
+          p.x += Math.cos(p.a) * p.s;
+          p.y += Math.sin(p.a) * p.s + 0.04;
+          p.l--;
+        });
+        fwParticles = fwParticles.filter(p => p.l > 0);
+        if (fwParticles.length)
+          fwId = requestAnimationFrame(animateFW);
+      }
+
+      function stopFireworks() {
+        cancelAnimationFrame(fwId);
+        fwParticles = [];
+        fwCtx.clearRect(0, 0, fwCanvas.width, fwCanvas.height);
+        fwCanvas.style.display = 'none';
+      }
+
+
+      // Ambulo script modal
+      document.getElementById("noBtn").addEventListener("click", () => {
+        const modal = new bootstrap.Modal(document.getElementById("noModal"));
+        modal.show();
+      });
+
+
+
+      /* VIBRATION */
+      function vibrateLove() {
+        if (navigator.vibrate)
+          navigator.vibrate([200, 100, 300, 100, 500]);
+      }
+    </script>
+
+
+
+    <script>
+      document.addEventListener('mousemove', e => {
+        const h = document.createElement('span');
+        h.innerText = '❤️';
+        h.style.position = 'fixed';
+        h.style.left = e.clientX + 'px';
+        h.style.top = e.clientY + 'px';
+        h.style.fontSize = '14px';
+        h.style.pointerEvents = 'none';
+        h.style.opacity = 1;
+        document.body.appendChild(h);
+        let o = 1;
+        const i = setInterval(() => {
+          o -= 0.1;
+          h.style.opacity = o;
+          h.style.transform = 'translateY(-20px)';
+          if (o <= 0) { clearInterval(i); h.remove(); }
+        }, 30);
+      });
+
+
+
+
+      const images = [
+        "./assets/images/your_gallery1.jpg",
+        "./assets/images/your_gallery2.jpg",
+        "./assets/images/your_gallery3.jpg",
+        "./assets/images/your_gallery4.jpg",
+        "./assets/images/youandmeaiedit.jpeg",
+        "./assets/images/kingandqueen.jpeg",
+      ];
+
+      let index = 0;
+      const img = document.getElementById("galleryImg");
+      const dotsContainer = document.getElementById("dots");
+
+      function renderDots() {
+        dotsContainer.innerHTML = "";
+        images.forEach((_, i) => {
+          const d = document.createElement("span");
+          d.className = "dot" + (i === index ? " active" : "");
+          d.onclick = () => showImg(i);
+          dotsContainer.appendChild(d);
+        });
+      }
+
+      function showImg(i) {
+        index = i;
+        img.style.animation = "none";
+        img.src = images[index];
+        void img.offsetWidth;
+        img.style.animation = "fadeScale 0.6s ease";
+        renderDots();
+      }
+
+      function nextImg() {
+        index = (index + 1) % images.length;
+        showImg(index);
+      }
+
+      function prevImg() {
+        index = (index - 1 + images.length) % images.length;
+        showImg(index);
+      }
+
+      renderDots();
+
+
+
+      const latchImages = [
+        "./assets/images/Latchanampic.jpg",
+        "./assets/images/latchanam2.jpg",
+        "./assets/images/your_gallery4.jpg",
+        "./assets/images/smile.JPG",
+      ];
+
+      let latchIndex = 0;
+
+      function startLatchanam() {
+        document.querySelector(".go-btn").style.display = "none";
+        document.getElementById("latchanamGallery").style.display = "block";
+        renderLatchDots();
+        autoSlide();
+      }
+
+      function renderLatchDots() {
+        const dots = document.getElementById("latchDots");
+        dots.innerHTML = "";
+        latchImages.forEach((_, i) => {
+          const dot = document.createElement("span");
+          dot.className = "gallery-dot" + (i === latchIndex ? " active" : "");
+          dots.appendChild(dot);
+        });
+      }
+
+      function autoSlide() {
+        setInterval(() => {
+          latchIndex = (latchIndex + 1) % latchImages.length;
+          const img = document.getElementById("latchanamImg");
+          img.style.animation = "none";
+          img.src = latchImages[latchIndex];
+          void img.offsetWidth;
+          img.style.animation = "fadeZoom 0.8s ease";
+          renderLatchDots();
+        }, 2500);
+      }
+
+
+      function showRecreation() {
+        document.querySelector(".recreate-btn").style.display = "none";
+        document.getElementById("compareBox").style.display = "block";
+      }
+
+
+      function revealKids() {
+        document.getElementById("kidsGallery").classList.remove("hidden");
+      }
+
+      document.getElementById("finalSurpriseBtn")
+        .addEventListener("click", () => {
+          const modal = new bootstrap.Modal(
+            document.getElementById("finalSurpriseModal")
+          );
+          modal.show();
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>

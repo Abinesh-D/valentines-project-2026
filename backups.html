@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Valentine ❤️</title>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      animation: fadeInDown 2s ease;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      animation: fadeInUp 2s ease;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 6s infinite ease-in;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-800px) rotate(45deg); opacity: 0; }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card-love {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: fadeInUp 2s ease;
+    }
+
+    .btn-love {
+      background: #ff4d6d;
+      color: white;
+      border-radius: 30px;
+      padding: 12px 30px;
+      border: none;
+      transition: 0.3s;
+    }
+
+    .btn-love:hover {
+      background: #ff1e4d;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Hearts -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <h1>Happy Valentine's Day ❤️</h1>
+      <p>You are the most beautiful part of my life</p>
+
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+          <div class="card-love">
+            <h3 class="text-danger">A Message From My Heart 💌</h3>
+            <p class="mt-3 text-muted">
+              Every smile of yours makes my world brighter.
+              Thank you for being my love, my peace, and my happiness.
+              I promise to stand by you, today and always.
+            </p>
+            <button class="btn-love mt-3" data-bs-toggle="modal" data-bs-target="#intentionModal">Click for Surprise 🎁</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMORIES SECTION -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center text-danger mb-4" style="font-family: 'Great Vibes', cursive; font-size: 3rem;">Our Beautiful Memories 💖</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card shadow-lg border-0 h-100">
+            <img src="./images/memory1.jpg" class="card-img-top" alt="Memory 1">
+            <div class="card-body">
+              <h5 class="card-title text-danger">The Day We Met 🌸</h5>
+              <p class="card-text text-muted">The moment our eyes met, my heart knew it found its home.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-lg border-0 h-100">
+            <img src="./images/memory2.jpg" class="card-img-top" alt="Memory 2">
+            <div class="card-body">
+              <h5 class="card-title text-danger">Our First Trip ✈️</h5>
+              <p class="card-text text-muted">Every journey feels magical when I travel with you.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-lg border-0 h-100">
+            <img src="./images/memory3.jpg" class="card-img-top" alt="Memory 3">
+            <div class="card-body">
+              <h5 class="card-title text-danger">Endless Laughs 😂</h5>
+              <p class="card-text text-muted">Your smile is my favorite memory of all time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOVE PUZZLE SECTION -->
+  <section class="py-5" style="background: linear-gradient(135deg, #ffe0ea, #fff);">
+    <div class="container">
+      <h2 class="text-center text-danger mb-4" style="font-family: 'Great Vibes', cursive; font-size: 3rem;">Our Love Puzzle 🧩💘</h2>
+      <p class="text-center text-muted mb-5">Only we know these answers… try them ❤️</p>
+
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card-love">
+
+            <!-- Question 1 -->
+            <div class="mb-4">
+              <h5>💋 When was our first kiss?</h5>
+              <input type="date" id="q1" class="form-control">
+              <small id="a1" class="text-success fw-semibold d-none">Correct 💖 11 April 2025</small>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="mb-4">
+              <h5>🔥 When was our first intimacy?</h5>
+              <input type="date" id="q2" class="form-control">
+              <small id="a2" class="text-success fw-semibold d-none">Correct ❤️ 19 April 2025</small>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="mb-4">
+              <h5>🌸 When did we first meet?</h5>
+              <input type="date" id="q3" class="form-control">
+              <small id="a3" class="text-success fw-semibold d-none">Correct 💫 10 March 2025</small>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="mb-4">
+              <h5>💔 How long was our longest fight? (in days)</h5>
+              <input type="number" id="q4" class="form-control" placeholder="Enter number of days">
+              <small id="a4" class="text-success fw-semibold d-none">Yes… but we came back stronger ❤️ (4 days)</small>
+            </div>
+
+            <button class="btn-love w-100" onclick="checkPuzzle()">Check Our Love Answers 💕</button>
+            <p id="finalLove" class="text-center text-danger fw-bold mt-4 d-none">
+              No matter the fights or distance, my heart always chooses YOU ❤️
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMIRE YOU SECTION -->
+  <section class="py-5" style="background:linear-gradient(135deg,#fff0f5,#ffe6ee);">
+    <div class="container">
+      <h2 class="text-center text-danger mb-3" style="font-family:'Great Vibes',cursive;font-size:3rem;">Do You Know When I Admire You More? 💭❤️</h2>
+      <p class="text-center text-muted mb-5">Click each one… don’t skip 😌</p>
+
+      <div class="row justify-content-center g-4">
+        <div class="col-md-3 col-6 text-center">
+          <button class="admire-btn" onclick="admire('smile')">😊<br><span>Smile</span></button>
+        </div>
+        <div class="col-md-3 col-6 text-center">
+          <button class="admire-btn" onclick="admire('anger')">😠<br><span>Anger</span></button>
+        </div>
+        <div class="col-md-3 col-6 text-center">
+          <button class="admire-btn" onclick="admire('sleeping')">😴<br><span>Sleeping</span></button>
+        </div>
+        <div class="col-md-3 col-6 text-center">
+          <button class="admire-btn" onclick="admire('caring')">🤍<br><span>Caring</span></button>
+        </div>
+      </div>
+
+      <!-- Images -->
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-6 text-center">
+          <img id="admireImg" class="img-fluid rounded-4 shadow-lg d-none" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL ADMIRE POPUP -->
+  <div class="modal fade" id="admireModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4">
+        <div class="modal-body text-center p-4">
+          <h4 class="text-danger mb-3">Just For Fun 😄❤️</h4>
+          <p class="typing-text">I admire you in every mood, every moment… there is no single option for you.</p>
+          <button class="btn-love mt-3" data-bs-dismiss="modal">Close 💕</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .admire-btn{
+      width:100%;
+      padding:20px;
+      border:none;
+      border-radius:20px;
+      background:white;
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+      font-size:1.2rem;
+      transition:all .3s ease;
+    }
+    .admire-btn span{font-size:.9rem; color:#ff4d6d;}
+    .admire-btn:hover{
+      transform:translateY(-8px) scale(1.05);
+      background:#ff4d6d;
+      color:white;
+    }
+    .typing-text{
+      overflow:hidden;
+      white-space:nowrap;
+      border-right:3px solid #ff4d6d;
+      animation:typing 4s steps(60,end), blink .7s infinite;
+    }
+    @keyframes typing{from{width:0} to{width:100%}}
+    @keyframes blink{50%{border-color:transparent}}
+  </style>
+
+  <script>
+    const admireState = { smile:false, anger:false, sleeping:false, caring:false };
+    function admire(type){
+      const img = document.getElementById('admireImg');
+      img.src = `./images/${type}.jpg`;
+      img.classList.remove('d-none');
+      img.style.animation = 'fadeInUp 1s';
+      admireState[type] = true;
+      if(Object.values(admireState).every(v=>v)){
+        setTimeout(()=>{
+          new bootstrap.Modal(document.getElementById('admireModal')).show();
+        },800);
+      }
+    }
+  </script>
+
+  <!-- INTERACTIVE MEMORY GALLERY -->
+  <section class="py-5" style="background:#fff5f8;">
+    <div class="container">
+      <h2 class="text-center text-danger mb-4" style="font-family:'Great Vibes',cursive;font-size:3rem;">Unlock Our Memories 🔐📸</h2>
+      <p class="text-center text-muted mb-5">Each photo unlocks only with our memories… 💞</p>
+
+      <div class="row g-4">
+        <!-- MEMORY 1 -->
+        <div class="col-md-6">
+          <div class="card shadow-lg border-0 h-100 p-3">
+            <h5 class="text-danger">Memory #1 💭</h5>
+            <p class="text-muted">Where did we first meet?</p>
+            <input id="m1" class="form-control mb-2" placeholder="Type your answer" />
+            <button class="btn-love mb-3" onclick="unlockImg('m1','park','img1')">Unlock Memory 🔓</button>
+            <div id="img1" class="d-none text-center">
+              <img src="./images/gallery1.jpg" class="img-fluid rounded-4 shadow" />
+              <p class="mt-2 text-danger fw-semibold">This moment started everything ❤️</p>
+            </div>
+            <p id="e1" class="text-center text-danger fw-semibold d-none">🥺 How could you forget this? Try again my love…</p>
+          </div>
+        </div>
+
+        <!-- MEMORY 2 -->
+        <div class="col-md-6">
+          <div class="card shadow-lg border-0 h-100 p-3">
+            <h5 class="text-danger">Memory #2 💭</h5>
+            <p class="text-muted">What date was our first kiss? (dd-mm-yyyy)</p>
+            <input id="m2" class="form-control mb-2" placeholder="Example: 11-04-2025" />
+            <button class="btn-love mb-3" onclick="unlockImg('m2','11-04-2025','img2')">Unlock Memory 🔓</button>
+            <div id="img2" class="d-none text-center">
+              <img src="./images/gallery2.jpg" class="img-fluid rounded-4 shadow" />
+              <p class="mt-2 text-danger fw-semibold">A kiss I’ll remember forever 💋</p>
+            </div>
+            <p id="e2" class="text-center text-danger fw-semibold d-none">😢 This one is special… think again ❤️</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SPECIAL IMAGE -->
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+          <div class="card-love text-center">
+            <h4 class="text-danger mb-3">✨ The Most Special Memory ✨</h4>
+            <p class="text-muted mb-4">What is the one thing you would never want me to change?</p>
+
+            <div class="d-grid gap-2">
+              <button class="btn btn-outline-danger" onclick="special(false)">Your loyalty</button>
+              <button class="btn btn-outline-danger" onclick="special(false)">Your patience</button>
+              <button class="btn btn-outline-danger" onclick="special(true)">Your unconditional love</button>
+              <button class="btn btn-outline-danger" onclick="special(false)">Your caring</button>
+            </div>
+
+            <div id="specialImg" class="d-none mt-4">
+              <img src="./images/special.jpg" class="img-fluid rounded-4 shadow-lg" />
+              <p class="mt-3 text-danger fw-bold fs-5">Because your unconditional love is my forever ❤️</p>
+            </div>
+
+            <p id="specialErr" class="d-none mt-3 fw-semibold" style="color:#ff4d6d; animation: shake 0.4s;">
+              💔 Oops… not this one. Look into your heart and try again 💗
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+
+  <script>
+    function unlockImg(inputId, correct, imgId) {
+      const val = document.getElementById(inputId).value.toLowerCase().trim();
+      const img = document.getElementById(imgId);
+      const err = document.getElementById('e' + imgId.replace('img',''));
+      if (val === correct) {
+        img.classList.remove('d-none');
+        err.classList.add('d-none');
+      } else {
+        err.classList.remove('d-none');
+        img.classList.add('d-none');
+      }
+    }
+
+    function special(isCorrect) {
+      const img = document.getElementById('specialImg');
+      const err = document.getElementById('specialErr');
+      if (isCorrect) {
+        img.classList.remove('d-none');
+        err.classList.add('d-none');
+      } else {
+        err.classList.remove('d-none');
+        img.classList.add('d-none');
+      }
+    }
+
+    function checkPuzzle() {
+      if (document.getElementById('q1').value === '2025-04-11') {
+        document.getElementById('a1').classList.remove('d-none');
+      }
+      if (document.getElementById('q2').value === '2025-04-19') {
+        document.getElementById('a2').classList.remove('d-none');
+      }
+      if (document.getElementById('q3').value === '2025-03-10') {
+        document.getElementById('a3').classList.remove('d-none');
+      }
+      if (document.getElementById('q4').value === '4') {
+        document.getElementById('a4').classList.remove('d-none');
+      }
+
+      document.getElementById('finalLove').classList.remove('d-none');
+    }
+
+     function showSurprise() {
+      document.getElementById('surpriseText').style.display = 'block';
+    }
+  </script>
+    
+
+
+<!-- INTENTION MODAL -->
+<div class="modal fade" id="intentionModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-danger">My Intention With You ❤️</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="./images/intention.jpg" class="img-fluid rounded-4 shadow mb-3" alt="Intention Image">
+        <p class="text-muted fs-6">
+          My intention with you is simple — to love you honestly, respect you deeply,
+          protect your heart, and grow together through every phase of life.
+          I don’t want perfection… I want <strong>you</strong>, always ❤️
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== MUSIC MEMORIES SECTION ===== -->
+
+<style>
+  .music-mama {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    padding: 60px 20px;
+    border-radius: 20px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .music-mama h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeDown 1s ease;
+  }
+
+  .music-card {
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    animation: fadeUp 1s ease;
+  }
+
+  .music-question {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .music-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 12px;
+  }
+
+  .music-options button {
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+
+  .music-options button:hover {
+    transform: translateY(-3px) scale(1.03);
+  }
+
+  .correct {
+    background: #00c853;
+    color: #fff;
+  }
+
+  .wrong {
+    background: #ff5252;
+    color: #fff;
+  }
+
+  .music-msg {
+    margin-top: 15px;
+    font-size: 15px;
+    animation: pop 0.5s ease;
+  }
+
+  .playlist-unlock {
+    display: none;
+    text-align: center;
+    margin-top: 50px;
+    animation: fadeUp 1s ease;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+</style>
+
+<section class="music-mama">
+
+  <h2>🎶 Our Music Memories ❤️</h2>
+
+  <!-- Q1 -->
+  <div class="music-card">
+    <div class="music-question">Which song connects us more?</div>
+    <div class="music-options">
+      <button onclick="musicAnswer(this,false)">A Thousand Years</button>
+      <button onclick="musicAnswer(this,true,'friends.mp3')">Friends</button>
+      <button onclick="musicAnswer(this,false)">Until I Found You</button>
+      <button onclick="musicAnswer(this,false)">Perfect</button>
+    </div>
+    <div class="music-msg"></div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="music-card">
+    <div class="music-question">Which song expresses my love most?</div>
+    <div class="music-options">
+      <button onclick="musicAnswer(this,true,'unnodu.mp3')">Unnodu Vazhatha Vazhu</button>
+      <button onclick="musicAnswer(this,false)">Mudhal Nee Mudivum Nee</button>
+      <button onclick="musicAnswer(this,false)">Pirai Thedum Iravile</button>
+    </div>
+    <div class="music-msg"></div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="music-card">
+    <div class="music-question">When I left Coimbatore, which song you missed most?</div>
+    <div class="music-options">
+      <button onclick="musicAnswer(this,false)">Dandelions</button>
+      <button onclick="musicAnswer(this,false)">Annal Mel Panithuli</button>
+      <button onclick="musicAnswer(this,false)">Maruvarthai Pesathey</button>
+      <button onclick="musicAnswer(this,true,'porane.mp3')">Porane Porane</button>
+    </div>
+    <div class="music-msg"></div>
+  </div>
+
+  <!-- UNLOCK -->
+  <div class="playlist-unlock" id="playlistUnlock">
+    <h3>🎧 Playlist Unlocked Mama ❤️</h3>
+    <p>You know us better than anyone 🥹</p>
+  </div>
+
+</section>
+
+<audio id="musicPlayer"></audio>
+
+<script>
+  let musicCorrect = 0;
+
+  function musicAnswer(btn, correct, song) {
+    const msg = btn.closest('.music-card').querySelector('.music-msg');
+
+    if (correct) {
+      btn.classList.add('correct');
+      msg.innerHTML = "💖 Correct da Mama… this song is us!";
+      playMusic(song);
+      musicCorrect++;
+    } else {
+      btn.classList.add('wrong');
+      msg.innerHTML = "😝 Dei idhu illa… epdi marandha?";
+    }
+
+    if (musicCorrect === 3) {
+      document.getElementById('playlistUnlock').style.display = 'block';
+      if (navigator.vibrate) navigator.vibrate([200,100,200]);
+    }
+  }
+
+  function playMusic(file) {
+    const audio = document.getElementById('musicPlayer');
+    audio.src = "./songs/" + file;
+    audio.currentTime = 0;
+    audio.play();
+
+    setTimeout(() => {
+      audio.pause();
+      audio.currentTime = 0;
+    }, 30000);
+  }
+</script>
+
+<!-- ===== END MUSIC MEMORIES ===== -->
+
+
+
+
+</body>
+</html>

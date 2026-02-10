@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Valentine ❤️</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      animation: fadeInDown 2s ease;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      animation: fadeInUp 2s ease;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 6s infinite ease-in;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-800px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card-love {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      animation: fadeInUp 2s ease;
+    }
+
+    .btn-love {
+      background: #ff4d6d;
+      color: white;
+      border-radius: 30px;
+      padding: 12px 30px;
+      border: none;
+      transition: 0.3s;
+    }
+
+    .btn-love:hover {
+      background: #ff1e4d;
+      transform: scale(1.05);
+    }
+
+    /* Parent section */
+    .iframe-wrapper {
+      height: 100vh;
+      /* Parent height */
+      padding: 0;
+      margin: 0 auto;
+    }
+
+    /* Iframe */
+    .iframe-child {
+      width: 100%;
+      height: 100%;
+      /* Match parent height */
+      border: 0;
+      display: block;
+    }
+
+
+
+    /* .admire-btn {
+      width: 100%;
+      padding: 20px;
+      border: none;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      font-size: 1.2rem;
+      transition: all .3s ease;
+    }
+
+    .admire-btn span {
+      font-size: .9rem;
+      color: #ff4d6d;
+    }
+
+    .admire-btn:hover {
+      transform: translateY(-8px) scale(1.05);
+      background: #ff4d6d;
+      color: white;
+    } */
+
+
+    .admire-btn {
+    background: rgba(255,255,255,0.85);
+    border: 2px solid #ffb6c1;
+    border-radius: 18px;
+    padding: 20px 10px;
+    width: 100%;
+    font-size: 26px;
+    transition: all 0.35s ease;
+    box-shadow: 0 10px 25px rgba(255,105,135,0.15);
+  }
+
+  .admire-btn span {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 6px;
+    color: #d6336c;
+  }
+
+  .admire-btn:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 18px 40px rgba(255,105,135,0.35);
+    background: #fff;
+  }
+
+  /* IMAGE FRAME */
+  .admire-frame {
+    position: relative;
+    padding: 10px;
+    border-radius: 28px;
+    background: linear-gradient(135deg, #ff758f, #ffb6c1, #ffd6e0);
+    animation: glow 4s infinite alternate;
+    display: inline-block;
+  }
+
+  @keyframes glow {
+    from { box-shadow: 0 0 20px rgba(255,105,135,0.4); }
+    to { box-shadow: 0 0 35px rgba(255,105,135,0.7); }
+  }
+
+  /* IMAGE ITSELF */
+  #admireImg {
+    max-width: 260px;
+    border-radius: 22px;
+    background: white;
+    padding: 6px;
+    animation: floatIn 0.8s ease forwards;
+  }
+
+  @keyframes floatIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* CAPTION */
+  .admire-caption {
+    margin-top: 14px;
+    font-size: 16px;
+    color: #c9184a;
+    font-weight: 600;
+    animation: fadeIn 0.6s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+    /* .typing-text {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #ff4d6d;
+      animation: typing 4s steps(60, end), blink .7s infinite;
+    } */
+
+    /* @keyframes typing {
+      from {
+        width: 0
+      }
+
+      to {
+        width: 100%
+      }
+    } */
+     
+     .typing-text {
+  font-family: 'Baloo 2', cursive; /* panda-friendly */
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
+  line-height: 1.6;
+  color: #c9184a;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 0 10px;
+  white-space: normal;     /* allows wrapping */
+  word-break: break-word;  /* prevents overflow */
+}
+
+.typing-text {
+  overflow: hidden;
+  border-right: 2px solid #ff4d6d;
+  animation:
+    typing 4s steps(60, end),
+    blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from { max-width: 0 }
+  to { max-width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+
+    @keyframes blink {
+      50% {
+        border-color: transparent
+      }
+    }
+
+    @keyframes shake {
+      0% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-5px);
+      }
+
+      50% {
+        transform: translateX(5px);
+      }
+
+      75% {
+        transform: translateX(-5px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .memory-img {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+.panda {
+    font-size: 70px;
+    text-align: center;
+    animation: bounce 2s infinite;
+  }
+
+  .panda-font {
+  font-family: 'Baloo 2', cursive;
+  color: #5d595a;
+}
+
+  @keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <h1>Happy Valentine's Day ❤️</h1>
+      <p>You are the most beautiful part of my life</p>
+
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+          <div class="card-love">
+            <h3 class="text-danger">A Message From My Heart 💌</h3>
+            <p class="mt-3 text-muted">
+              Every smile of yours makes my world brighter.
+              Thank you for being my love, my peace, and my happiness.
+              I promise to stand by you, today and always.
+            </p>
+            <button class="btn-love mt-3" data-bs-toggle="modal" data-bs-target="#intentionModal">Click for Surprise
+              🎁</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMORIES SECTION -->
+<section class="py-5 bg-light">
+  <div class="container">
+
+    <h2 class="text-center text-danger mb-4"
+      style="font-family: 'Great Vibes', cursive; font-size: 3rem;">
+      Our Beautiful Memories 💖
+    </h2>
+
+    <div class="row g-4">
+
+      <!-- MEMORY 1 -->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 h-100 text-center">
+
+          <div class="card-body">
+            <h5 class="card-title text-danger">Our First Picture Together 🌸</h5>
+            <p class="card-text text-muted">
+              “One photo, countless feelings 🥹❤️”<br>
+              “The day us became real 📸💞”<br>
+              “First picture together, first step into forever 💍❤️”
+            </p>
+
+            <p class="text-secondary fst-italic guess-text">
+              Guess the image first 🤔💭
+            </p>
+
+            <button class="btn btn-outline-danger btn-sm show-btn">
+              Show Image 📸
+            </button>
+          </div>
+
+          <img src="./assets/images/ourfirstpictogether.jpg"
+               class="card-img-top d-none memory-img"
+               alt="First Picture">
+        </div>
+      </div>
+
+      <!-- MEMORY 2 -->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 h-100 text-center">
+
+          <div class="card-body">
+            <h5 class="card-title text-danger">Our First Trip 🚌❤️</h5>
+            <p class="card-text text-muted">
+              Our first journey began at our office annual day 🚌 —<br>
+              filled with shared smiles, endless laughter,<br>
+              and the quiet joy of being together ❤️<br>
+              A simple trip turned into a forever memory 💕
+            </p>
+
+            <p class="text-secondary fst-italic guess-text">
+              Guess the image first 🤔💭
+            </p>
+
+            <button class="btn btn-outline-danger btn-sm show-btn">
+              Show Image 📸
+            </button>
+          </div>
+
+          <img src="./assets/images/firsttrip.png"
+               class="card-img-top d-none memory-img"
+               alt="First Trip">
+        </div>
+      </div>
+
+      <!-- MEMORY 3 -->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 h-100 text-center">
+
+          <div class="card-body">
+            <h5 class="card-title text-danger">Our First Selfiee 😂❤️</h5>
+            <p class="card-text text-muted">
+              Our first selfie, our first Insta story —<br>
+              fun at Brook Mall, laughs everywhere,<br>
+              me lifting your bag, you getting impressed 🥹<br>
+              and our hands touching while we walked… ❤️
+            </p>
+
+            <p class="text-secondary fst-italic guess-text">
+              Guess the image first 🤔💭
+            </p>
+
+            <button class="btn btn-outline-danger btn-sm show-btn">
+              Show Image 📸
+            </button>
+          </div>
+
+          <img src="./assets/images/ourfirstselfee.png"
+               class="card-img-top d-none memory-img"
+               alt="First Selfie">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- LOVE PUZZLE SECTION -->
+  <section class="py-5" style="background: linear-gradient(135deg, #ffe0ea, #fff);">
+    <div class="container">
+      <h2 class="text-center text-danger mb-4" style="font-family: 'Great Vibes', cursive; font-size: 3rem;">Our Love
+        Puzzle 🧩💘</h2>
+         <div class="panda panda-font">My Dear 🐼</div>
+      <p class="text-center text-muted mb-5">Only we know these answers… try them ❤️</p>
+
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card-love">
+
+            <!-- Question 1 -->
+            <div class="mb-4">
+              <h5>💋 When was our first kiss?</h5>
+              <input type="date" id="q1" class="form-control">
+              <small id="a1" class="text-success fw-semibold d-none">Correct 💖 11 April 2025</small>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="mb-4">
+              <h5>🔥 When was our first intimacy?</h5>
+              <input type="date" id="q2" class="form-control">
+              <small id="a2" class="text-success fw-semibold d-none">Correct ❤️ 19 April 2025</small>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="mb-4">
+              <h5>🌸 When did we first meet?</h5>
+              <input type="date" id="q3" class="form-control">
+              <small id="a3" class="text-success fw-semibold d-none">Correct 💫 10 March 2025</small>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="mb-4">
+              <h5>💔 How long was our longest fight? (in days)</h5>
+              <input type="number" id="q4" class="form-control" placeholder="Enter number of days">
+              <small id="a4" class="text-success fw-semibold d-none">Yes… but we came back stronger ❤️ (4 days)</small>
+            </div>
+
+            <button class="btn-love w-100" onclick="checkPuzzle()">Check Our Love Answers 💕</button>
+            <p id="finalLove" class="text-center text-danger fw-bold mt-4 d-none">
+              No matter the fights or distance, my heart always chooses YOU ❤️
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ADMIRE YOU SECTION -->
+  <section class="py-5" style="background:linear-gradient(135deg,#fff0f5,#ffe6ee);">
+    <div class="container">
+      <h2 class="text-center text-danger mb-3" style="font-family:'Great Vibes',cursive;font-size:3rem;">Do You Know
+        When I Admire You More? 💭❤️</h2>
+      <p class="text-center text-muted mb-5">Click each one… don’t skip 😌</p>
+
+      <div class="row justify-content-center g-4">
+        <div class="col-md-3 col-6 text-center">
+          <button class="admire-btn" onclick="admire('smile')">😊<br><span>Smile</span></button>
+        </div>
+        <div class="col-md-3 col-6 text-center">
+          <button class="admire-btn" onclick="admire('anger')">😠<br><span>Anger</span></button>
+        </div>
+        <div class="col-md-3 col-6 text-center">
+          <button class="admire-btn" onclick="admire('sleeping')">😴<br><span>Sleeping</span></button>
+        </div>
+        <div class="col-md-3 col-6 text-center">
+          <button class="admire-btn" onclick="admire('caring')">🤍<br><span>Caring</span></button>
+        </div>
+      </div>
+
+      <!-- Images -->
+       <div class="row justify-content-center mt-5">
+  <div class="col-md-6 text-center">
+    <div id="admireFrame" class="admire-frame d-none">
+      <img id="admireImg" class="img-fluid" />
+    </div>
+    <div id="admireText" class="admire-caption d-none"></div>
+  </div>
+</div>
+
+      <!-- <div class="row justify-content-center mt-5">
+        <div class="col-md-6 text-center">
+          <img id="admireImg" class="img-fluid rounded-4 shadow-lg d-none" />
+        </div>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- FINAL ADMIRE POPUP -->
+  <div class="modal fade" id="admireModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4">
+        <div class="modal-body text-center p-4">
+          <h4 class="text-danger mb-3">Just For Fun 😄❤️</h4>
+          <p class="typing-text text-center">I admire you in every mood, every moment… there is no single option for you.</p>
+          <button class="btn-love mt-3" data-bs-dismiss="modal">Close 💕</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- INTERACTIVE MEMORY GALLERY -->
+  <section class="py-5" style="background:#fff5f8;">
+    <div class="container">
+      <h2 class="text-center text-danger mb-4" style="font-family:'Great Vibes',cursive;font-size:3rem;">Unlock Our
+        Memories 🔐📸</h2>
+      <p class="text-center text-muted mb-5">Each photo unlocks only with our memories… 💞</p>
+
+      <!-- SPECIAL IMAGE -->
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+          <div class="card-love text-center">
+            <h4 class="text-danger mb-3">✨ The Most Special Memory ✨</h4>
+            <p class="text-muted mb-4">What is the one thing I’d never want to change about you?</p>
+
+            <div class="d-grid gap-2">
+              <button class="btn btn-outline-danger" onclick="special(false)">Your confidence</button>
+              <button class="btn btn-outline-danger" onclick="special(false)">Your cute habits</button>
+              <button class="btn btn-outline-danger" onclick="special(true)">Your unconditional love</button>
+              <button class="btn btn-outline-danger" onclick="special(false)">Your caring</button>
+            </div>
+
+            <div id="specialImg" class="d-none mt-4">
+              <img src="./assets/images/our_memories_pic.png" class="img-fluid rounded-4 shadow-lg" />
+              <p class="mt-3 text-danger fw-bold fs-5">Because your unconditional love is my forever ❤️</p>
+            </div>
+
+            <p id="specialErr" class="d-none mt-3 fw-semibold" style="color:#ff4d6d; animation: shake 0.4s;">
+              💔 Oops… not this one. Look into your heart and try again 💗
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- INTENTION MODAL -->
+  <div class="modal fade" id="intentionModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-danger">My Intention With You ❤️</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="./assets/images/intention.jpg" class="img-fluid rounded-4 shadow mb-3" alt="Intention Image">
+          <p class="text-muted fs-6">
+            My intention with you is simple — to love you honestly, respect you deeply,
+            protect your heart, and grow together through every phase of life.
+            I don’t want perfection… I want <strong>you</strong>, always ❤️
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <section class="container-fluid my-5 iframe-wrapper" style="width: 1707px;">
+    <iframe src="./music_mama.html" class="iframe-child rounded-4 shadow-lg" loading="lazy">
+    </iframe>
+
+
+  </section>
+
+
+  <script>
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      document.body.appendChild(heart);
+    }
+
+
+     function admire(type) {
+    const img = document.getElementById("admireImg");
+    const frame = document.getElementById("admireFrame");
+    const text = document.getElementById("admireText");
+
+    const data = {
+      smile: {
+        img: "./assets/images/smile.jpg",
+        text: "When you smile… my whole world pauses 😍"
+      },
+      anger: {
+        img: "./assets/images/anger.jpg",
+        text: "Even your anger is cute to me 🥹❤️"
+      },
+      sleeping: {
+        img: "./assets/images/sleeping.jpg",
+        text: "I admire you the most when you sleep peacefully 🤍"
+      },
+      caring: {
+        img: "./assets/images/caring.jpg",
+        text: "Your caring heart is my safest place 💕"
+      }
+    };
+
+    // show image + frame
+    frame.classList.remove("d-none");
+    text.classList.remove("d-none");
+
+    img.src = data[type].img;
+    text.innerText = data[type].text;
+
+    // retrigger image animation
+    img.style.animation = "none";
+    void img.offsetWidth;
+    img.style.animation = "floatIn 0.8s ease forwards";
+
+    // 🌸 SPECIAL: after clicking CARING → show modal after 5 sec
+    if (type === "caring") {
+      setTimeout(() => {
+        const admireModal = new bootstrap.Modal(
+          document.getElementById("admireModal")
+        );
+        admireModal.show();
+      }, 3000); // 5 seconds
+    }
+  }
+
+
+      // const admireState = { smile: false, anger: false, sleeping: false, caring: false };
+    // function admire(type) {
+    //   const img = document.getElementById('admireImg');
+    //   img.src = `./assets/images/${type}.jpg`;
+    //   img.classList.remove('d-none');
+    //   img.style.animation = 'fadeInUp 1s';
+    //   admireState[type] = true;
+      // if (Object.values(admireState).every(v => v)) {
+      //   setTimeout(() => {
+      //     new bootstrap.Modal(document.getElementById('admireModal')).show();
+      //   }, 800);
+      // }
+    // }
+
+
+     function unlockImg(inputId, correct, imgId) {
+      const val = document.getElementById(inputId).value.toLowerCase().trim();
+      const img = document.getElementById(imgId);
+      const err = document.getElementById('e' + imgId.replace('img', ''));
+      if (val === correct) {
+        img.classList.remove('d-none');
+        err.classList.add('d-none');
+      } else {
+        err.classList.remove('d-none');
+        img.classList.add('d-none');
+      }
+    }
+
+    function special(isCorrect) {
+      const img = document.getElementById('specialImg');
+      const err = document.getElementById('specialErr');
+      if (isCorrect) {
+        img.classList.remove('d-none');
+        err.classList.add('d-none');
+      } else {
+        err.classList.remove('d-none');
+        img.classList.add('d-none');
+      }
+    }
+
+    function checkPuzzle() {
+      if (document.getElementById('q1').value === '2025-04-11') {
+        document.getElementById('a1').classList.remove('d-none');
+      }
+      if (document.getElementById('q2').value === '2025-04-19') {
+        document.getElementById('a2').classList.remove('d-none');
+      }
+      if (document.getElementById('q3').value === '2025-03-10') {
+        document.getElementById('a3').classList.remove('d-none');
+      }
+      if (document.getElementById('q4').value === '4') {
+        document.getElementById('a4').classList.remove('d-none');
+      }
+
+      document.getElementById('finalLove').classList.remove('d-none');
+    }
+
+    function showSurprise() {
+      document.getElementById('surpriseText').style.display = 'block';
+    }
+
+
+    document.querySelectorAll('.show-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const card = this.closest('.card');
+
+      // Hide button and guess text
+      this.style.display = 'none';
+      card.querySelector('.guess-text').style.display = 'none';
+
+      // Show image
+      card.querySelector('.memory-img').classList.remove('d-none');
+    });
+  });
+
+
+  
+  </script>
+</body>
+
+</html>
